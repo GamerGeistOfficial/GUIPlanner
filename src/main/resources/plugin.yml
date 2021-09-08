@@ -1,0 +1,11 @@
+name: GUIPlanner
+version: '${project.version}'
+main: com.gamergeist.guiplanner.GUIPlanner
+api-version: 1.17
+prefix: GamerGeist
+authors: [ GamerGeist ]
+description: Plan GUIs easily
+website: http://www.gamergeist.com
+commands:
+  gp:
+    description: Main command for Planning GUIs
