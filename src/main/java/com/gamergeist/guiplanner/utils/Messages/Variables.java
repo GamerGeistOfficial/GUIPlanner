@@ -26,7 +26,7 @@ public class Variables {
 
 
     public void setMessages() {
-        prefix = "§7[§bGUI&6|&dPlanner§7] ";
+        prefix = "§7[§dGamer§cGeist §6| §dGP§7] ";
         noperm = prefix + "§aYou do not have permission§6!";
         ShinyStringName = "§7[§bItemCustomizer§7] ";
         unknownArg = prefix + "&aUnknown argument! ";

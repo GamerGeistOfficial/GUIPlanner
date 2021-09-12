@@ -104,9 +104,12 @@ public class gp implements CommandExecutor {
                                                 meta.addEnchant(ench, lvl, true);
                                                 item.setItemMeta(meta);
                                                 p.getInventory().setItemInMainHand(item);
-                                                MessageManager.SendMessage(msg.prefix + "&aSuccessfully enchanted with &b" + args[2] + " &aand a level of &b" + lvl + "&6!", p);
+                                                MessageManager.SendMessage(msg.prefix + "&aSuccessfully" +
+                                                        " enchanted with &b" + args[2] + " &aand a level of &b" +
+                                                        lvl + "&6!", p);
                                             } else {
-                                                MessageManager.SendMessage(msg.warning + "Enchant cannot be added to this item", p);
+                                                MessageManager.SendMessage(msg.warning + "Enchant cannot be" +
+                                                        " added to this item", p);
                                             }
                                         } else {
                                             MessageManager.SendMessage(msg.warning + "No item selected", p);
@@ -119,7 +122,8 @@ public class gp implements CommandExecutor {
                                     MessageManager.SendMessage(msg.warning + "&cEnchantment doesn't exist", p);
                                 }
                             } else {
-                                MessageManager.SendMessage(msg.syntaxError + "/gp enchant <EnchantmentName> <EnchantmentLevel>", p);
+                                MessageManager.SendMessage(msg.syntaxError + "/gp enchant <EnchantmentName>" +
+                                        " <EnchantmentLevel>", p);
                             }
 
                         } else if (args[1].equalsIgnoreCase("glow")) {
@@ -130,17 +134,21 @@ public class gp implements CommandExecutor {
                                     boolean choice = Boolean.parseBoolean(args[2]);
                                     if (choice) {
                                         ItemFactory.addGlow(p.getInventory().getItemInMainHand());
-                                        MessageManager.SendMessage(msg.prefix + "&aItem has been affected with Glowing&6!", p);
+                                        MessageManager.SendMessage(msg.prefix + "&aItem has been affected with" +
+                                                " Glowing&6!", p);
                                     } else {
                                         ItemFactory.removeGlow(p.getInventory().getItemInMainHand());
-                                        MessageManager.SendMessage(msg.prefix + "&aGlowing has been removed from the item&6!", p);
+                                        MessageManager.SendMessage(msg.prefix + "&aGlowing has been removed from" +
+                                                " the item&6!", p);
                                     }
                                 } catch (Exception E) {
-                                    MessageManager.SendMessage(msg.warning + "&aPlease select true or false", p);
+                                    MessageManager.SendMessage(msg.warning + "&aPlease select true or false",
+                                            p);
                                 }
                             } else {
                                 ItemFactory.addGlow(p.getInventory().getItemInMainHand());
-                                MessageManager.SendMessage(msg.prefix + "&aItem has been affected with Glowing&6!", p);
+                                MessageManager.SendMessage(msg.prefix + "&aItem has been affected with Glowing&6!",
+                                        p);
                             }
                         } else if (args[1].equalsIgnoreCase("lore")) {
                             // /gp item lore <line> <new lore>
@@ -187,7 +195,7 @@ public class gp implements CommandExecutor {
                     if (args.length >= 2) {
                         if (args[1].equalsIgnoreCase("create")) {
                             if (args.length <= 4) {
-                                MessageManager.SendMessage(msg.prefix + "&cSyntax Error:use ic gui create <inv size> <inv name> <inv display name>", p);
+                                MessageManager.SendMessage(msg.prefix + "&cSyntax Error:use &6/&bgp gui create <inv size> <inv name> <inv display name>", p);
                                 return true;
                             }
                             StringBuilder sb = new StringBuilder(50);
@@ -216,9 +224,9 @@ public class gp implements CommandExecutor {
 
 
                         } else if (args[1].equalsIgnoreCase("rename")) {
-                            //Syntax : ic gui rename <name> <NewDisplayname>
+                            //Syntax : gp gui rename <name> <NewDisplayname>
                             if (args.length <= 3) {
-                                MessageManager.SendMessage(msg.prefix + msg.syntaxError + "&aPlease use &6/&cic gui rename <invname> <NewDisplayName>", p);
+                                MessageManager.SendMessage(msg.prefix + msg.syntaxError + "&aPlease use &6/&cgp gui rename <invname> <NewDisplayName>", p);
                             } else {
                                 if (GUIEditor.getMap().containsKey(args[2])) {
                                     StringBuilder sb = new StringBuilder(50);
@@ -238,7 +246,7 @@ public class gp implements CommandExecutor {
 
                         } else if (args[1].equalsIgnoreCase("editor")) {
                             if (args.length <= 2) {
-                                MessageManager.SendMessage(msg.prefix + "&aplease provide the inventory name to edit&6.&a View this with &6/&cic gui list", p);
+                                MessageManager.SendMessage(msg.prefix + "&aplease provide the inventory name to edit&6.&a View this with &6/&cgp gui list", p);
                             }
                             if (args.length >= 3) {
                                 if (GUIEditor.getMap().containsKey(args[2])) {
@@ -248,7 +256,7 @@ public class gp implements CommandExecutor {
                                         MessageManager.SendMessage(msg.prefix + "&7[&cWarning&7] &aA player is already editing that GUI", p);
                                     }
                                 } else {
-                                    MessageManager.SendMessage(msg.prefix + "&aInventory does not exist&6. &aPlease use &6/&cic gui list", p);
+                                    MessageManager.SendMessage(msg.prefix + "&aInventory does not exist&6. &aPlease use &6/&cgp gui list", p);
                                 }
                             }
                         } else if (args[1].equalsIgnoreCase("list")) {
